@@ -42,17 +42,17 @@ matrix:
         - XCODE_ACTION=build
         - XCODE_DESTINATION="platform=tvOS Simulator,name=Apple TV 1080p"
     - script:
-      - carthage checkout --no-use-binaries
+      - carthage checkout
       - carthage build --no-skip-current --platform mac
       env:
         - JOB=CARTHAGE-macOS
     - script:
-        - carthage checkout --no-use-binaries
+        - carthage checkout
         - carthage build --no-skip-current --platform iOS
       env:
         - JOB=CARTHAGE-iOS
     - script:
-      - carthage checkout --no-use-binaries
+      - carthage checkout
       - carthage build --no-skip-current --platform tvOS
       env:
         - JOB=CARTHAGE-tvOS
