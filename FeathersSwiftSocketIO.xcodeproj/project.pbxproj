@@ -287,11 +287,11 @@
 			};
 			buildConfigurationList = EA35FC4B1ECB54C40018856E /* Build configuration list for PBXProject "FeathersSwiftSocketIO" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = EA35FC471ECB54C40018856E;
 			productRefGroup = EA35FC521ECB54C40018856E /* Products */;
