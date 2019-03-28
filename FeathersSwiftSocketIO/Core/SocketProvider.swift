@@ -205,7 +205,7 @@ public final class SocketProvider: Provider {
 
 fileprivate extension Service.Method {
     
-    fileprivate var socketRequestPath: String {
+    var socketRequestPath: String {
         switch self {
         case .find: return "find"
         case .get: return "get"
@@ -216,7 +216,7 @@ fileprivate extension Service.Method {
         }
     }
     
-    fileprivate var socketData: [SocketData?] {
+    var socketData: [SocketData?] {
         switch self {
         case .find(let query):
             return [query?.serialize() ?? [:]]
