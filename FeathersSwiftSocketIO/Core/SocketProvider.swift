@@ -8,7 +8,7 @@
 
 import SocketIO
 import Foundation
-import enum Result.Result
+import Result
 import enum Result.NoError
 import Feathers
 import ReactiveSwift
@@ -95,11 +95,12 @@ public final class SocketProvider: Provider {
                 vSelf.client.once("connect") { _,_  in
                     vSelf.client.emitWithAck(path, data).timingOut(after: vSelf.timeout) { data in
                         let result = vSelf.handleResponseData(data: data)
-                        if let error = result.error {
-                            observer.send(error: error)
-                        } else if let response = result.value {
+                        do {
+                            let response = try result.get()
                             observer.send(value: response)
-                        } else {
+                        } catch let error where error is AnyFeathersError {
+                            observer.send(error: error as! AnyFeathersError)
+                        } catch {
                             observer.send(error: AnyFeathersError(FeathersNetworkError.unknown))
                         }
                     }
@@ -107,11 +108,12 @@ public final class SocketProvider: Provider {
             } else {
                 vSelf.client.emitWithAck(path, data).timingOut(after: vSelf.timeout) { data in
                     let result = vSelf.handleResponseData(data: data)
-                    if let error = result.error {
-                        observer.send(error: error)
-                    } else if let response = result.value {
+                    do {
+                        let response = try result.get()
                         observer.send(value: response)
-                    } else {
+                    } catch let error where error is AnyFeathersError {
+                        observer.send(error: error as! AnyFeathersError)
+                    } catch {
                         observer.send(error: AnyFeathersError(FeathersNetworkError.unknown))
                     }
                 }
