@@ -256,7 +256,6 @@
 				C63859F5201F9C65007A09A6 /* Frameworks */,
 				C63859F6201F9C65007A09A6 /* Headers */,
 				C63859F7201F9C65007A09A6 /* Resources */,
-				C6385A02201F9D82007A09A6 /* ShellScript */,
 			);
 			buildRules = (
 			);
