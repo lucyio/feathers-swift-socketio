@@ -1,6 +1,6 @@
 github "ReactiveCocoa/ReactiveSwift" "6.1.0"
 github "antitypical/Result" "5.0.0"
 github "daltoniam/Starscream" "3.1.0"
-github "lucyio/feathers-swift" "3bc3f7488a3bf1034a82730c379f7096bbb36ab8"
+github "lucyio/feathers-swift" "8d5fa5704dcb9f305832da7d906f6c1bd568b3d2"
 github "marketplacer/keychain-swift" "16.0.1"
 github "socketio/socket.io-client-swift" "v14.0.0"
